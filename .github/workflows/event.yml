@@ -1,11 +1,12 @@
 name: Push Events
 on: 
-  schedule:
-    - cron: '*/5 * * * *'
+  workflow_dispatch:
 jobs:
-  show-info:
+  run-manual-task:
       runs-on: ubuntu-latest
       steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4.2.2
       - name: Info
         run: |
-          echo "This is a push event on all the branches"
+          echo "Running manual task"
