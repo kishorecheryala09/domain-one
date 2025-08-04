@@ -1,6 +1,8 @@
 name: Manual Workflow
 on: 
-  workflow_dispatch:
+  issues:
+    types:
+      - opened
 jobs:
   run-manual-task:
       runs-on: ubuntu-latest
