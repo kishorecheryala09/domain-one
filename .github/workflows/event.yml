@@ -15,3 +15,7 @@ jobs:
       - name: Manual Task
         run: |
           echo "Running manual task with param1: ${{ github.event.inputs.param1 }}"
+      - name: Checkout Code
+        uses: actions/checkout@v4.2.2
+      - name: use API Key
+        run: echo "API_KEY is ${{ secrets.API_KEY }}
