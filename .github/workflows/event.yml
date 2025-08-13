@@ -14,8 +14,18 @@ on:
         #default: 'Hello World'
 jobs:
   run-manual-task:
-      runs-on: ubuntu-latest
-      steps:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        color: [green, pink]
+        os: [owl, magpie]
+        include:
+          - color: blue
+            animal: owl
+          - color: pink
+            animal: magpie
+      
+    steps:
       - name: Checkout Repository
         uses: actions/checkout@v4.2.2
       - name: Manual Task
