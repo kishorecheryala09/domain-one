@@ -2,10 +2,16 @@ name: Manual Workflow
 on:  
   workflow_dispatch:
     inputs:
-      param1:
-        description: 'Param1 description'
-        required: true
-        default: 'Hello World'
+      test suite:
+        description: Test Suite
+        type: choice
+        options:
+          - functional
+          - regression
+      #param1:
+        #description: 'Param1 description'
+        #required: true
+        #default: 'Hello World'
 jobs:
   run-manual-task:
       runs-on: ubuntu-latest
